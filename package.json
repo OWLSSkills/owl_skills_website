@@ -21,7 +21,6 @@
     "react-markdown": "^9.1.0",
     "remark-breaks": "^4.0.0",
     "remark-gfm": "^4.0.1",
-    "resend": "^6.4.2",
     "turndown": "^7.2.1",
     "turndown-plugin-gfm": "^1.0.2"
   }

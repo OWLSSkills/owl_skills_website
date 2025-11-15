@@ -80,28 +80,7 @@ async function sendWithGmail({ name, email, message }) {
   }
 }
 
-/* ---- Resend (optional) ---- */
-async function sendWithResend({ name, email, message }) {
-  try {
-    const { Resend } = await import("resend");
-    const resend = new Resend(process.env.RESEND_API_KEY);
 
-    const to   = process.env.MAIL_TO || process.env.GMAIL_USER;
-    const from = process.env.MAIL_FROM || "notifications@yourdomain.com"; // must be verified in Resend
-
-    const subject = `New website inquiry from ${name}`;
-    const html = renderHtml({ name, email, message });
-
-    const resp = await resend.emails.send({
-      from, to, subject, html, reply_to: email,
-    });
-
-    if (resp?.error) return { ok: false, error: String(resp.error?.message || resp.error) };
-    return { ok: true };
-  } catch (e) {
-    return { ok: false, error: e?.message || String(e) };
-  }
-}
 
 function renderHtml({ name, email, message }) {
   // Brand palette
