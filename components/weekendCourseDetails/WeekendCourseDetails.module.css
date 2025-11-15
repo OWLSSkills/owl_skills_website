@@ -1,0 +1,63 @@
+/* full-width row under your page grid */
+.section {
+  grid-column: 1 / -1;
+  width: min(1280px, 92vw);
+  position: relative;
+  clear: both;
+  z-index: 1;
+  margin-left: 4vw;            /* keep your offset */
+  margin-top: -4vh;
+  
+}
+
+/* 2-col layout: photos | copy */
+.row {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(16px, 2.2vw, 28px);
+  align-items: stretch;         /* make both columns equal height */
+}
+
+/* --- PHOTOS (smaller) --- */
+.stack {
+  display: grid;
+  gap: clamp(12px, 1.4vw, 18px);
+}
+
+/* explicit height => smaller overall; no tilt/shadow */
+.card {
+  position: relative;
+  height: clamp(220px, 26vw, 320px);  /* ↓ smaller than before */
+  overflow: hidden;
+}
+
+/* --- COPY (stretch to same height as photos) --- */
+.copy {
+  display: grid;
+  grid-auto-rows: min-content;        /* paragraphs keep natural height */
+  align-content: space-between;       /* distribute top → bottom */
+  max-width: 62ch;
+  font-size: clamp(1.02rem, 0.9vw + 0.95rem, 1.35rem);  /* scale larger on wide screens */
+  line-height: 1.62;
+}
+
+/* paragraph spacing scales with viewport */
+.copy p + p {
+  margin-top: clamp(14px, 1.2vw, 22px);
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    height: clamp(200px, 48vw, 300px);
+  }
+
+  .copy {
+    align-content: start;       /* normal flow when stacked */
+    font-size: clamp(1rem, 1.6vw + 0.8rem, 1.2rem);
+  }
+}

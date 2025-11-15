@@ -1,0 +1,174 @@
+.header{
+  background: var(--green-50, rgb(245,249,246));
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  width: 100%;
+  z-index: 100;              
+  position: relative;
+}
+
+/* desktop/tablet bar: logo · nav · CTA */
+.bar{
+  margin: 0 auto;
+  padding: 10px clamp(16px, 4vw, 24px);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  column-gap: clamp(12px, 3vw, 28px);
+}
+
+/* brand */
+.brand{
+  display:inline-flex;
+  align-items:center;
+  text-decoration:none;
+  cursor: pointer;
+}
+.logo{
+  height: clamp(60px, 6vw, 122px);
+  width:auto;
+  display:block;
+}
+
+/* center nav */
+.nav{
+  justify-self: center;
+  display: flex;
+  gap: clamp(8px, 2vw, 28px);
+  align-items: center;
+  flex-wrap: wrap; /* desktop can wrap nicely if needed */
+}
+
+/* links */
+.navLink,
+.navLink:link,
+.navLink:visited{
+  text-decoration: none;
+  color: #276C4C;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: .03em;
+  font-size: clamp(14px, 1.6vw, 28px);
+  white-space: nowrap;
+}
+.navLink:hover{ color:#122932; }
+.navLink:focus-visible{
+  outline:2px solid currentColor;
+  outline-offset:2px;
+}
+
+/* CTA container (desktop) */
+.ctaWrap{
+  justify-self:end;
+}
+
+/* default: hamburger hidden, mobile CTA hidden */
+.menuToggle{
+  display: none;
+}
+.mobileCta{
+  display: none;
+  opacity: 0;
+}
+
+/* SCALE EFFECT FOR BUTTON IN HEADER */
+.scaleUpCenter{
+  transform-origin: center;
+  margin-top: 8%;
+}
+
+@media (max-width: 1200px) {
+  .scaleUpCenter {
+    transform: scale(1.15);
+  }
+}
+
+@media (max-width: 900px) {
+  .scaleUpCenter {
+    transform: scale(1.08);
+  }
+}
+
+@media (max-width: 600px) {
+  .scaleUpCenter {
+    transform: scale(1.02);
+  }
+}
+
+/* ----------------- MOBILE ----------------- */
+@media (max-width: 760px){
+
+
+  /* bar: logo centered, hamburger right */
+  .bar{
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas: "spacer brand menu";
+    row-gap: 0;
+  }
+
+  .brand{
+    grid-area: brand;
+    justify-content: center;
+  }
+
+  .ctaWrap{
+    display: none; /* desktop CTA hidden on mobile */
+  }
+
+  /* hamburger on the right */
+  .menuToggle{
+    grid-area: menu;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 8px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .mobileCta{
+    display: none;
+    opacity: 100;
+  }
+  .menuBar{
+    width: 20px;
+    height: 2px;
+    border-radius: 999px;
+    background: #276C4C;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  /* base nav is hidden at mobile */
+  .nav{
+    display: none;
+  }
+
+  /* slide-down mobile panel when open */
+  .navMobileOpen{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    float: right;
+    justify-self: right;
+    left: 0;
+    right: 0;
+    height: fit-content;
+    top: 64px;
+    padding: 20px clamp(16px, 6vw, 24px);
+    background: var(--green-50, rgb(245,249,246));
+    gap: 18px;
+    z-index: 40;
+  }
+
+  .navMobileOpen .navLink{
+    font-size: 0.95rem;
+  }
+
+  /* mobile CTA inside menu */
+  .mobileCta{
+    display: inline-flex;
+    align-self: flex-start;
+    margin-top: auto; /* push to bottom of panel */
+  }
+}

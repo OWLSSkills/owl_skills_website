@@ -1,0 +1,41 @@
+
+
+
+.section{
+    background: var(--green-50, rgb(245,249,246)); 
+}
+
+.meetJessie{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80svw;
+    height: auto;
+    max-width: none;         /* ignore parent width */
+    display: block;
+  }
+
+
+  .content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;   
+    margin-top: -2svh                    
+  }
+
+  .mission_image{
+    width: 100%;
+    display: block;
+    margin: 0 auto;   /* centers horizontally */
+  }
+  
+  .image_container{
+    justify-content: center;
+    justify-items: center;
+    
+  }
+
+  .paragraph{
+    margin-left: 14svw;
+    margin-right: 2svw;
+    font-size:2svw;
+  }

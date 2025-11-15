@@ -1,0 +1,182 @@
+/* Section wrapper (content stays constrained) */
+.limited {
+    --container-w: 1120px;
+    --gutter: clamp(16px, 3vw, 36px);
+  
+    width: min(var(--container-w), 92vw);
+    margin: 48px auto;
+    padding: 24px 0 40px;
+    position: relative;
+    isolation: isolate;          /* new stacking context for the bg layer */
+    /* remove background here */
+  }
+  
+  /* Full-width topo background behind the section */
+  .limited::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    margin-top: -48px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  
+    /* full bleed across the viewport, regardless of container width */
+    width: 100svw;               /* small-viewport unit (respects browser UI) */
+    width: 100vw;                /* fallback */
+    height: 100%;                /* match section height */
+  
+    background-image: url('/images/Topo_Brown.png');
+    background-size: 900px auto; /* tweak to taste */
+    background-repeat: repeat;
+    background-position: top center;
+  }
+  
+  /* Title, row, photo, copy, cta… keep as-is below */
+  
+  
+  /* Title (tape PNG) */
+  .title {
+    display: grid;
+    place-items: start;
+    margin-bottom: clamp(8px, 1.2vw, 16px);
+    margin-left: -6vw;                 /* gentle left drag like your style */
+  }
+  .title :where(img) {
+    width: min(820px, 92%);
+    height: auto;
+    display: block;
+  }
+  
+  /* Photo | Copy layout (flipped from weekend page) */
+  .row {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;   /* photo | copy */
+    gap: var(--gutter);
+    align-items: start;
+  }
+  
+  /* Left photo (combined image, no tilt) */
+  .photo {
+    position: relative;
+    aspect-ratio: 5 / 4; /* slightly taller image block */
+    border-radius: 12px;
+    overflow: hidden;
+    height: clamp(425px, 50vw, 675px);
+    transform: scale(1); /* gentle enlargement */
+    margin-left: -20svw;
+
+
+  }
+  /* Right copy (two paragraphs + CTA) */
+  .copy {
+    max-width: 30svw;
+    font-size: clamp(1rem, 0.85vw + 0.95rem, 1.22rem);
+    line-height: 1.6;
+    gap: clamp(12px, 1.2vw, 18px);
+    margin-top:4rem ;
+    margin-left: -10vw;
+  }
+  
+  .copy p + p {
+    margin-top: clamp(10px, 0.8vw, 14px);
+  }
+  
+  /* CTA button: uses your existing utility classes, plus minor tweaks */
+  .cta {
+    align-self: start;
+    margin-top: clamp(12px, 1.4vw, 18px);
+    padding: .85rem 1.2rem;
+    border-radius: 10px;
+    font-weight: 800;
+    text-align: center;
+    display: inline-block;
+    line-height: 1.2;
+    box-shadow: 0 4px 10px rgba(0,0,0,.15);
+  }
+  
+  /* Responsive: stack */
+  @media (max-width: 900px) {
+    .title { margin-left: -2vw; }
+    .row { grid-template-columns: 1fr; }
+    .photo { aspect-ratio: 16 / 11;    margin-left: -20svw;
+    }
+    .copy { max-width: 70ch; }
+  }
+  
+  .skillsBanner {
+    background-color: #d6cae0;      
+    text-align: left;
+    padding: 1.2rem 1rem;
+    margin-top: -5rem;
+    width: 100%;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    color: rgb(49,89,72);                 
+    letter-spacing: 1.2px;
+    font-weight: 600;               
+    font-size: clamp(2rem, 6vw, 3.5rem);
+  
+  
+  
+  }
+
+
+  .skillsImageWrap {
+    position: relative;
+    width: min(96vw, 1600px);
+    height: clamp(90vh, 115vw, 1800px);
+    margin: 8rem auto 8rem;
+    margin-top: calc(32vh + 12vw);
+    
+  
+    overflow: visible;                  /* 👈 allow edges to overflow naturally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* the wrapper that we scale and offset */
+  .skillsImageInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: scale(var(--scale, 1)) translateY(var(--yOffset, 0));
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+  
+  /* next/image element */
+  .skillsImage {
+    object-fit: contain;
+    object-position: top center;
+    pointer-events: none;
+    
+  }
+
+
+  .justifyCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100svw;     /* full screen width, no scrollbars */
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* mobile refinement */
+  @media (max-width: 900px) {
+    .skillsImageWrap {
+      height: auto;
+      aspect-ratio: 3 / 4;
+    }
+    .skillsImageInner {
+      --scale: 1.05;
+      --yOffset: 0;
+    }
+    .copy {
+        margin-left: auto;
+
+    }
+  }
+  
+

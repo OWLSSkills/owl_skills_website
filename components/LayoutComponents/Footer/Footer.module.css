@@ -1,0 +1,100 @@
+.footer{
+    margin-top: 4svh;
+    background: rgb(245,249,246);
+    width: 100vw;
+    position: relative;              
+    min-height: 100px;               
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .footerStack{
+    display: inline;
+    text-align: center;
+    
+
+  }
+  
+  .smallLogo {  width: 50%; justify-self:start;    
+  }
+  
+  /* Right-docked container, vertically centered */
+  .socialsDock{
+    justify-self: start;
+    align-self: start;
+    scale:.8;
+
+    z-index: 1;
+    margin-top: -1svh;
+
+
+  }
+  .socialsDock div{
+    width: fit-content;
+  }
+  .contact{
+    justify-self: center;
+    font-size: clamp(1rem, 2svw,1.2rem);
+  }
+  
+  /* PHONE FIX: stack then center socials underneath */
+
+  
+
+  
+
+  
+.logoFooter{
+    height: auto;
+    justify-self: center;
+    align-self: center;
+    width: 70%;
+    
+
+  }
+
+
+  .affiliateLogos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+  }
+
+
+  .text{
+    margin-top:-1svh;
+  }
+
+
+
+  @media (max-width: 800px){
+    .footer{
+      /* optional but nice: keeps things comfy near iOS home bar */
+      padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+      display: grid;
+      justify-items: center;
+    }
+  
+    .socialsDock{
+      position: static;
+      margin: .5rem auto 1rem;
+      transform-origin: center;
+      scale:1.5;
+
+    }
+
+
+    .smallLogo {
+      width: 90%;
+      justify-self: center;
+      margin-top: 1svh;
+    }
+  
+    .affiliateLogos{
+
+      grid-template-columns: 1fr;
+      grid-template-rows:1fr 1fr;
+
+    }
+  }

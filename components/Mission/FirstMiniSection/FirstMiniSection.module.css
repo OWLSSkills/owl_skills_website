@@ -1,0 +1,108 @@
+.section{
+    min-height: 100svh;                                   /* full first view */
+    background: url('/images/Topo_Map.png') center / cover no-repeat;
+    padding-block: clamp(8px, 2vw, 14px) clamp(12px, 2.6vw, 18px); 
+    row-gap: clamp(8px, 1.8vw, 16px);                     /* small vertical gap */
+  }
+  
+  /* shared container */
+  .wrap{
+    margin-inline: auto;
+    padding-inline: clamp(12px, 4vw, 32px);
+  }
+  
+  /* tape SVG */
+  .tape{
+    width: min(100%, 620px);                              /* keep it reasonable */
+    height: auto;
+    display: block;
+  }
+  
+  .lead{
+    margin-top: -8svh;
+    max-width: 62ch;
+    font-size: clamp(18px, 2vw, 22px);
+    line-height: 1.45;
+    color: #122932;
+  }
+  
+  /* --- two-column content --- */
+  .content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;                       /* images | text */
+    column-gap: clamp(20px, 4vw, 48px);
+    align-items: start;
+    row-gap: clamp(12px, 2vw, 18px);                      /* small vertical spacing */
+  }
+  
+  /* left collage footprint (controls how tall the area is) */
+  .stack{
+    position: relative;
+    height: clamp(320px, 44vw, 560px);    
+    transform-origin:  center; 
+    transform: translate(7%, -5%);           
+  }
+  
+  /* polaroid-style shots */
+  .shot{
+    position: absolute;
+    width: 29svw;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+  }
+
+  
+  /* right column text – more generous spacing so it “fills” the height */
+  .copy{
+    color: #122932;
+    font-size: clamp(18px, 2vw, 22px);
+    line-height: 1.75;                                    /* ↑ taller lines to match image height */
+    hyphens: auto;
+  }
+  .copy p{ margin: 0; }
+  .copy p + p{ margin-top: clamp(10px, 1.2vw, 18px); }    /* modest paragraph spacing */
+  
+  /* mobile: stack and keep things tight */
+  @media (max-width: 900px){
+    .content{
+      grid-template-columns: 1fr;
+      row-gap: clamp(10px, 3vw, 16px);
+    }
+  
+    /* remove the pull-up so it doesn't collide */
+    .lead{ margin-top: 0; }
+  
+    /* let the collage auto-size and flow */
+    .stack{
+      height: auto;                 /* was a fixed clamp() height */
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;    
+      scale: 1;                /* spacing between shots */
+    }
+  
+    /* shots become normal blocks (no absolute/rotate),
+       so the container grows and nothing overlaps the text */
+    .shot{
+      position: relative;           /* was absolute */
+      left: auto; top: auto;
+      width: 100%;
+      height: auto;
+      transform: none;              /* drop the tilt on small screens */
+      border-radius: 6px;
+    }
+  }
+
+  .paragraph{
+    font-size: clamp(18px, 2vw, 22px);
+  }
+
+
+  .leadInline {
+    margin-top: 0;                                /* don’t pull it up */
+    max-width: 40ch;                              /* nice readable width */
+    font-size: clamp(18px, 2vw, 22px);
+    line-height: 1.45;
+    margin-bottom: clamp(10px, 1.4vw, 18px);      /* space before big paragraph */
+  }

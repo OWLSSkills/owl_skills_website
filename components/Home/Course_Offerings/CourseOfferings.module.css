@@ -1,0 +1,122 @@
+
+.section{
+    min-height: 100svh;                           
+    display: grid;
+    grid-template-rows: 1fr auto;                  
+    row-gap: clamp(12px, 2vw, 32px);
+    background: url('/images/Topo_Map.png') center/cover no-repeat;
+  }
+  
+  
+  .first_sub_section,
+  .second_sub_section{
+    margin: 0;
+    position: static;
+    z-index: auto;
+    min-width: 0;
+    min-height: 0;
+  }
+  
+  
+/* Grid: 3 across → 2 → 1 */
+.first_sub_section{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: clamp(12px, 2vw, 32px);
+  align-items: start;
+  justify-items: center;
+}
+
+@media (max-width: 900px){
+  .first_sub_section{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 600px){
+  .first_sub_section{ grid-template-columns: 1fr; }
+}
+
+/* Poster wrapper: defines the box the image must fit into */
+.boardWrap{
+  position: relative;
+  width: 100%;
+  max-width: 800px;              /* adjust to taste */
+  aspect-ratio: 3 / 4;           /* keeps a tall “page” shape */
+  overflow: hidden;              /* hides any cropping from object-fit: cover */
+}
+
+/* Images: never exceed their cell */
+.course_offerings_image{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;             /* fills .boardWrap, cropping if needed */
+}
+
+/* Bottom banner should also not overflow */
+.course_offerings_image_bottom{
+  width: 100%;
+  height: auto;                  /* or 100% + object-fit: cover if you want a fixed ratio */
+  display: block;
+  object-fit: contain;           /* keeps full image visible */
+  transform: none;               /* remove the zoom that caused overflow */
+}
+
+/* Second section */
+.second_sub_section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;              /* keep it tidy */
+}
+.second_sub_section img{
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+  @media (max-width: 900px){
+    .first_sub_section{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+  }
+  @media (max-width: 600px){
+    .first_sub_section{ grid-template-columns: 1fr; }
+  }
+  
+
+
+  /* Wrapper becomes the positioning context */
+  
+  /* Your existing image class is fine; just ensure it's block-level */
+
+  /* Absolutely positioned, sized by percentages so it scales with the image */
+  .overlayBtn{
+    position: absolute;
+    left: var(--btn-left, 10%);
+    top:  var(--btn-top,  66%);
+    width: var(--btn-width, 28%);
+    z-index: 2;
+    /* optional: line the visual up more precisely */
+    transform-origin: left top;
+  }
+  
+  /* If you want the clickable area to match a slightly rotated or offset design,
+     nudge here (keep it subtle, like 1-2deg or a few px):
+     .overlayBtn { transform: rotate(-1deg); }
+  */
+  
+  /* Phone tweak (if the artwork has a different crop on small screens) */
+  @media (max-width: 600px){
+    .boardWrap{
+      --btn-left: 10.5%;
+      --btn-top:  66.5%;
+      --btn-width: 55%;   /* make it larger on small screens if needed */
+    }
+  }
+  
+
+  .overlayBtn,
+.overlayBtn:link,
+.overlayBtn:visited,
+.overlayBtn:hover,
+.overlayBtn:active {
+  text-decoration: none;
+}
+

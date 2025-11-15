@@ -1,0 +1,209 @@
+.headerAndPhotos{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: clamp(12px, 2vw, 32px);
+    border: 1px solid red;
+}
+.introPhotos{
+    width: 80%;
+    margin-top: -5svh;
+    align-self: start;
+
+}
+.topSection{
+    margin-top:4svh;
+}
+
+
+
+
+.header {
+    margin-left: 4svw;
+    align-self: start;
+
+  }
+
+.arrow1{
+    margin-top: 15svh;
+    justify-self: right;
+    width:80%;
+}
+  
+/* Title wrapper */
+.tape {
+
+  /* knobs you can tweak */
+  --tape-h: clamp(180px, 24vh, 360px);   /* tape HEIGHT */
+  --x-bleed: clamp(32px, 6vw, 120px);   /* left/right overhang */
+
+  position: relative;
+  display: inline-block;                /* grows with text */
+  line-height: 1;                       /* tight vertical fit */
+}
+
+/* the tape image behind the text */
+.tape::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(100% + var(--x-bleed));   /* make it WIDER than the text */
+  height: var(--tape-h);                /* make it TALLER */
+  transform: translate(-50%, -50%);
+  background: url("/images/mission/tape_4.png") center / 100% 100% no-repeat;
+  z-index: 0;
+}
+
+/* the actual title text */
+.tape .title {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding: 0 clamp(24px, 3vw, 48px);    /* breathing room inside the tape */
+  font-size: clamp(28px, 6vw, 64px);
+  font-weight: 800;
+  color: rgb(50, 87, 66);
+}
+
+.arrowAndButton {
+  display: grid;
+  grid-template-columns: 40% 60%;  /* fit arrow + button naturally */
+  align-items: center;
+  gap: clamp(12px, 2vw, 32px);
+  margin-top: -40svh;
+  border: 1px solid blue;
+}
+
+.call_to_action_button {
+    /* display: inline-flex; */
+    align-items: center;
+    justify-content: center;
+    padding: clamp(0.5rem, 1vw, 0.8rem) clamp(1rem, 2vw, 2rem);
+    font-size: clamp(0.9rem, 1vw, 1.1rem);
+    border-radius: 2rem;
+    font-weight: bold;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+
+  .buttonContainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-bottom: 4%;
+
+  }
+  .container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;   /* horizontally center image */
+    align-items: start;   /* stick image to the top inside container */
+    align-content: start;         /* stick the whole container to the top of the grid cell */
+    margin-top: 0svh;
+  }
+
+
+  /* Tablet-ish: 821px – 1200px */
+@media (max-width: 1600px) {
+    .headerAndPhotos {
+      grid-template-columns: 45% 55%;  /* give text a bit more room */
+      gap: clamp(8px, 1.6vw, 20px);
+    }
+  
+    .tape {
+      --tape-h: clamp(120px, 18vh, 220px);  /* shorter tape */
+    }
+  
+    .tape .title {
+      font-size: clamp(22px, 4.2vw, 40px);  /* shrink faster on tablets */
+      padding: 0 clamp(18px, 2.5vw, 32px);
+    }
+  
+    .introPhotos {
+      width: 65%;          /* don’t let the collage dominate */
+      margin-top: -2svh;   /* less aggressive lift */
+    }
+  
+    .arrowAndButton {
+      margin-top: -30svh;  /* reduce the huge negative offset */
+    }
+  }
+  
+
+
+  @media (max-width: 1200px) {
+    .headerAndPhotos {
+      grid-template-columns: 48% 52%;
+      gap: clamp(6px, 1vw, 16px);
+    }
+  
+    .tape {
+      --tape-h: clamp(110px, 16vh, 200px);
+    }
+  
+    .tape .title {
+      font-size: clamp(20px, 3.5vw, 36px);
+      padding: 0 clamp(14px, 2vw, 28px);
+    }
+  
+    .introPhotos {
+      width: 70%;
+      margin-top: -1svh;
+    }
+  
+    .arrowAndButton {
+      margin-top: -22svh;
+    }
+  }
+  
+
+/* Tablet portrait & small tablets */
+@media (max-width: 900px) {
+    .headerAndPhotos {
+      grid-template-columns: 1fr;         /* stack title + photos */
+      gap: clamp(12px, 3vw, 24px);
+      justify-items: center;
+      text-align: center;
+    }
+  
+    .header {
+      margin-left: 0;                     /* center the tape */
+    }
+  
+    .tape {
+      --tape-h: clamp(70px, 12vh, 120px);
+    }
+  
+    .tape .title {
+      font-size: clamp(18px, 4vw, 26px);  /* even smaller on tablets */
+      padding: 0 clamp(12px, 3vw, 20px);
+    }
+  
+    .introPhotos {
+      width: min(420px, 90vw);
+      margin-top: 1svh;
+      align-self: center;
+    }
+  
+    .arrowAndButton {
+      grid-template-columns: 1fr;         /* arrow above button */
+      margin-top: 1.5rem;
+      justify-items: center;
+    }
+  
+    .arrow1 {
+      width: min(420px, 90vw);
+      justify-self: center;
+    }
+  
+    .buttonContainer {
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 0;
+    }
+  }
+  

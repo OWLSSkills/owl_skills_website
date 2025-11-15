@@ -1,0 +1,147 @@
+/* --- Layout --------------------------------------------------------------- */
+.main {
+    /* full-width section + center the content */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: clamp(16px, 3vw, 40px);
+    background: var(--green-50, #f5f9f6);
+  }
+  
+  .article {
+    /* hard center + max width */
+    width: 100%;
+    max-width: 900px;             /* tweak if you want it narrower/wider */
+    margin: 0 auto;               /* ← CENTER */
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    padding: clamp(16px, 3vw, 32px);
+    background-color: rgb(208,195,179);
+
+  }
+  
+  .dateTitle {
+    font-size: clamp(28px, 5vw, 46px);
+    line-height: 1.15;
+    margin: 0 0 16px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    text-align: left; /* change to center if you like */
+  }
+  
+  .summary {
+    font-size: clamp(16px, 1.6vw, 20px);
+    color: #333;
+    margin: 12px 0 20px;
+  }
+  
+  .textBlock :global(p) {
+    margin: 0 0 1em;
+    line-height: 1.7;
+  }
+  .textBlock :global(ul),
+  .textBlock :global(ol) {
+    margin: 0 0 1em 1.25em;
+  }
+  .textBlock :global(h1),
+  .textBlock :global(h2),
+  .textBlock :global(h3) {
+    margin: 1.25em 0 0.5em;
+  }
+  
+  /* Any images that appear inside markdown text */
+  .textBlock :global(img),
+  .inlineImg {
+    display: block;
+    margin: 16px auto;
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: contain;         /* ✅ no zooming/cropping */
+    box-shadow: 0 4px 10px rgba(0,0,0,1);
+  }
+  
+  /* --- Standalone image blocks --------------------------------------------- */
+  .figure { margin: 16px 0; }
+  
+  .caption {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 6px;
+    text-align: center;
+  }
+  
+  /* Floated positions for image blocks */
+  .floatLeft {
+    float: left;
+    max-width: 48%;
+    margin: 0 16px 16px 0;
+    border-radius: 10px;
+    height: auto;
+  }
+  .floatRight {
+    float: right;
+    max-width: 48%;
+    margin: 0 0 16px 16px;
+    border-radius: 10px;
+    height: auto;
+  }
+  .mainImg {
+    display: block;
+    margin: 24px auto;
+    max-width: min(800px, 95%);  /* ✅ cap width, center horizontally */
+    width: auto;
+    height: auto;
+    border-radius: 12px;
+    object-fit: contain;         /* ✅ stop stretching */
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  }
+  
+  .clear { clear: both; }
+  
+  /* --- Hero (if used) ------------------------------------------------------- */
+  .heroWrap { margin: 0 0 16px; }
+  .heroImg {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    object-fit: cover;
+    max-height: min(60vh, 900px);
+    background-color: red;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+  
+  /* --- History CTA ---------------------------------------------------------- */
+  .historyWrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+  }
+  .historyBtn {
+    display: inline-block;
+    background: #2d7a4b;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .historyBtn:hover { filter: brightness(0.95); }
+  
+  /* --- Mobile niceties ------------------------------------------------------ */
+  @media (max-width: 720px) {
+    .floatLeft,
+    .floatRight {
+      float: none;
+      max-width: 100%;
+      margin: 12px 0;
+    }
+  }
+  
+
+  .article :where(img) {
+    border-radius: 12px;
+    width: 100%;
+  }

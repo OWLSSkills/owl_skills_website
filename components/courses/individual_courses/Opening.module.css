@@ -1,0 +1,301 @@
+.section {
+    /* 100% of the small-viewport height so mobile toolbars don't clip */
+    min-height: 80svh;
+    display: grid;
+    place-items: center;
+    padding: clamp(16px, 3vw, 32px);
+    /* optional subtle topo background if you have one globally */
+    background: var(--green-50, #f5f9f6);
+    background-image: url("/images/Topo_Brown.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  
+  .inner {
+    width: min(1100px, 100%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "header header"
+      "photos copy";
+    
+    gap: clamp(8px, 1.5vw, 14px);
+  }
+  
+  /* Tape title */
+  .header {
+    grid-area: header;
+     
+  }
+  
+/* Title wrapper */
+.tape {
+  /* knobs you can tweak */
+  --tape-h: clamp(180px, 24vh, 360px);   /* tape HEIGHT */
+  --x-bleed: clamp(32px, 6vw, 120px);   /* left/right overhang */
+
+  position: relative;
+  display: inline-block;                /* grows with text */
+  line-height: 1;                       /* tight vertical fit */
+}
+
+/* the tape image behind the text */
+.tape::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(100% + var(--x-bleed));   /* make it WIDER than the text */
+  height: var(--tape-h);                /* make it TALLER */
+  transform: translate(-50%, -50%);
+  background: url("/images/mission/tape_4.png") center / 100% 100% no-repeat;
+  z-index: 0;
+}
+
+/* the actual title text */
+.tape .title {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding: 0 clamp(24px, 3vw, 48px);    /* breathing room inside the tape */
+  font-size: clamp(28px, 6vw, 64px);
+  font-weight: 800;
+  color: rgb(50, 87, 66);
+}
+
+  
+  
+  /* Photos stack */
+  .photos {
+    grid-area: photos;
+    position: relative;
+    height: clamp(330px, 51vw, 480px);
+  }
+  
+  .polaroid {
+    position: absolute;
+    width: clamp(270px, 45vw, 480px);
+    border-radius: 8px;
+    padding: 10px 10px 16px; /* extra bottom for the polaroid feel */
+  }
+  
+  .photo {
+    display: block;
+    width: clamp(110%, 40vw, 160%);
+    height: auto;
+    border-radius: 6px;
+    margin-top:-28%;
+  }
+  
+  /* first and second “polaroids” with slight offsets */
+  .p1 {
+    top: 0;
+    left: 0;
+    transform: rotate(-6deg);
+  }
+  .p2 {
+    bottom: 0;
+    left: clamp(70px, 10vw, 120px);
+    transform: rotate(8deg);
+  }
+  
+  .copy {
+    grid-area: copy;
+    color: #122932;
+    /* fluid body size: min 18px, grows with vw, caps at 22px */
+    font-size: clamp(18px, 1.2vw + 0.6rem, 22px);
+    line-height: 1.6;
+    
+  }
+  
+  .copy p {
+    max-width: 62ch; /* keeps paragraphs readable on wide screens */
+    font-size: 35px;
+  }
+  /* Responsive: stack content on narrow screens */
+  @media (max-width: 820px) {
+
+    .inner {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "header"
+        "photos"
+        "copy"
+        "skills";
+      gap: clamp(14px, 3.2vw, 20px);
+      width: min(680px, 92vw);
+    }
+  
+      .tape{
+        width:  clamp(280px, 86vw, 560px);
+        height: clamp(60px,  16vw, 120px);
+        margin-left: 0;
+      }
+      .title{ font-size: clamp(18px, 6vw, 28px); }
+    
+  
+    .photos {
+      /* stop absolute positioning chaos on small screens */
+      position: relative;
+      height: auto;
+      display: grid;
+      gap: clamp(10px, 3vw, 14px);
+      justify-items: center;
+    }
+  
+    .polaroid {
+      position: relative;
+      /* width: min(84vw, 420px); */
+      transform: none;         /* no rotation on narrow screens */
+      left: auto; top: auto; bottom: auto;
+    }
+  
+    /* if you still want a *hint* of angle, use: */
+    /* .polaroid:nth-child(1){ transform: rotate(-2deg); }
+       .polaroid:nth-child(2){ transform: rotate(2deg); } */
+  
+    .copy {
+      font-size: clamp(17px, 4.2vw, 20px);
+      line-height: 1.7;
+      text-wrap: balance;      /* nicer rag */
+    }
+  
+    .copy p { max-width: 100%; }
+  
+    .skills {
+      width: 100%;
+      justify-self: stretch;
+    }
+    .photo{
+      margin-top: 2%;
+    }
+  }
+  /* Opening.module.css */
+
+.inner {
+  width: min(1100px, 100%);
+  display: grid;
+  /* 3 rows: header, main content stretch, bottom bar */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "photos copy";
+      align-items: center;
+  gap: clamp(16px, 3vw, 28px);
+  min-height: 100%; /* lets the bottom bar hug the bottom */
+}
+
+/* Tape title (unchanged trimmed) */
+.header { grid-area: header; }
+/* ...existing styles... */
+
+/* Bottom skills bar */
+.skills {
+  background-color: #d6cae0;      
+  text-align: left;
+  padding: 1.2rem 1rem;
+  margin-top: -5rem;
+  width: 100%;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  color: rgb(49,89,72);                 
+  letter-spacing: 1.2px;
+  font-weight: 600;               
+  font-size: clamp(2rem, 6vw, 3.5rem);
+}
+.skillsBanner {
+  background-color: #d6cae0;      
+  text-align: left;
+  padding: 1.2rem 1rem;
+  margin-top: -3rem;
+  width: 100%;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  color: rgb(49,89,72);                 
+  letter-spacing: 1.2px;
+  font-weight: 600;               
+  font-size: clamp(2rem, 6vw, 3.5rem);
+
+
+
+
+}
+.skillsText {
+  font-weight: 800;
+  font-size: clamp(16px, 2.2vw, 22px);
+  line-height: 1.2;
+  
+}
+
+/* If you want the purple bar to go FULL-BLEED within the section,
+   uncomment this: */
+/*
+.skills {
+  width: calc(100vw - 2 * clamp(16px, 3vw, 32px));
+  justify-self: center;
+}
+*/
+
+.scaleUpSmall{
+  transform: scale(1.5);
+  transform-origin: left;
+}
+
+@media (max-width: 820px) {
+  .inner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "photos"
+      "copy"
+      "skills";
+  }
+  .scaleUpSmall{
+    transform: scale(1);
+    transform-origin: left;
+    margin-bottom: 5%;
+  }
+  
+
+  /* ...existing mobile rules... */
+}
+
+
+
+  
+  .wrap {
+    width: min(1100px, 92vw);
+    margin: 0 auto;
+  }
+  
+  .poster {
+    display: block;
+    width: 100%;
+    height: auto;          /* keep aspect ratio */
+    border-radius: 12px;
+    /* box-shadow: 0 12px 28px rgba(0,0,0,.15); */
+  }
+  
+
+
+
+
+
+/* Make the content area wider and give the photo column more share */
+
+
+
+/* Let the paragraph use the available width */
+
+
+/* Enlarge the photo stack */
+
+
+/* keep the second photo offset sensible as images grow */
+
+
+/* Give everything an extra bump on very large screens */
+@media (min-width: 1440px){
+  .inner{ width: min(1600px, 96vw); }
+  .polaroid{ width: clamp(315px, 33vw, 570px); }
+  .copy{ font-size: clamp(20px, 1.1vw + 0.6rem, 24px); }
+}

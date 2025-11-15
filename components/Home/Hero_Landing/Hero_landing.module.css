@@ -1,0 +1,159 @@
+.hero_landing {
+    height: 100svh;
+    background: linear-gradient(180deg, #fff, #fff); 
+    background-color: red;
+    overflow: hidden;
+  }
+  
+  
+  .hero_landing_topagraphic_background {
+    position: relative; /* Required to contain the ::before */
+    width: 100%;
+    height: 55svh;
+    background-image:
+        /* linear-gradient(rgba(255, 0, 255, 0.718), rgb(255 255 0 / 0.5)), */
+        url('/Topo_Map.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0; /* base layer */
+
+  }
+  
+  .hero_landing_topagraphic_background::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(243, 243, 243, 0.2); /* transparent white */
+    z-index: -1; /* make it sit *under* the content inside */
+    pointer-events: none;
+  }
+  
+.hero_landing_images_container {
+    --hero-h: clamp(330px, 44svh, 650px); 
+    padding: 10svh 5vw 0 10vw;            
+    display: grid;
+    grid-template-columns: 33fr 67fr;     
+    align-items: start;
+    gap: clamp(12px, 2vw, 32px);
+    margin-top: -7svh;
+}
+  
+  
+.OWLS_banner {
+    height: var(--hero-h);
+    width: 100%;
+    object-fit: contain;
+    display: block;
+}
+  
+
+.pictures_first_banner_wrapper {
+    margin-top: calc(var(--hero-h) * -.08); 
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(8px, 1.5vw, 24px);
+    padding-right: 3vw; 
+}
+  
+
+.pictures_first_banner {
+    height: var(--hero-h);
+    width: 100%;             
+    object-fit: contain;
+    display: block;
+    gap: 0px;
+}
+
+  
+.hero_landing_buttons_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(0.5rem, 2vw, 2rem);
+    margin-top: -4.5svh;
+    flex-wrap: nowrap; 
+}
+
+
+@media (max-width: 500px) {
+    .hero_landing_buttons_container {
+      flex-wrap: wrap;
+    }
+}
+
+
+.meet_instructor_image{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    display: block;
+
+}
+.meet_your_instructor_section{
+    justify-content: center;
+    height: 35svh;
+}
+/* Container section */
+.as_seen_animation_banner {
+    background-color: #276C4C;
+    width: 100%;
+    height: 17svh;
+    position: relative;
+    padding: 2%;
+  }
+  
+  /* Main wrapper */
+  .animation_banner_wrapper {
+    overflow: hidden;
+    width: 100%;
+    padding: 1rem 2vw;
+  }
+  
+  /* Scrolling track */
+  .animation_banner_track {
+    display: flex;
+    gap: clamp(6rem, 16vw, 16rem);
+    animation: scroll-left 10s linear infinite;
+    width: max-content;
+    align-items: center;
+  }
+  
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-54%);
+    }
+  }
+  
+  .animation_banner_track:hover {
+    animation-play-state: paused;
+  }
+  
+  /* Force each logo into a box with the same width */
+  .logo_container {
+    width: clamp(100px, 10vw, 160px);
+    height: clamp(40px, 6vw, 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  /* All logos scale naturally inside their container */
+  .animation_banner_image {
+    max-height: 120%;
+    max-width: 120%;
+    object-fit: contain;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  /* National Geographic logo gets visually larger */
+  .scale_up_logo {
+    transform: scale(1.6);
+  }
+  

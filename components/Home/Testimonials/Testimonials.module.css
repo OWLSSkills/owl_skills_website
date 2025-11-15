@@ -1,0 +1,133 @@
+.section{
+    width: 100%;
+    background: rgb(216,210,229);
+    margin-top: 5svh;
+    padding: clamp(16px, 3vw, 32px) 0;
+    overflow: hidden;
+  }
+  
+  .container{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-inline: clamp(12px, 3vw, 32px);
+  }
+  
+  .title{
+    margin: 0 0 clamp(16px, 3vw, 28px);
+    text-align: center;
+    font-weight: 700;
+    font-size: clamp(18px, 2.4vw, 28px);
+    color: #122932;
+  }
+  
+  /* Marquee viewport */
+  .viewport{
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+  
+  /* Track */
+  .track{
+    display: flex;
+    gap: clamp(12px, 2vw, 20px);
+    width: max-content;
+    will-change: transform;
+    animation: scroll var(--duration, 40s) linear infinite;
+  }
+  @keyframes scroll{
+    to { transform: translateX(calc(-1 * var(--loop, 1000px))); }
+  }
+  
+  /* Group of cards in a single loop */
+  .set{
+    display: flex;
+    gap: inherit;
+  }
+  
+  /* Disable interaction on cloned sets used only for looping */
+  .set[aria-hidden="true"] { pointer-events: none; }
+  
+  /* Card sizes */
+  .card{
+    --card-w: clamp(260px, 28vw, 380px);
+    --card-max-h: 360px;          /* << adjust collapsed height here */
+    position: relative;
+    flex: 0 0 var(--card-w);
+    width: var(--card-w);
+    background: #fff;
+    border-radius: 16px;
+    padding: clamp(14px, 2.4vw, 20px);
+    box-shadow: 0 6px 24px rgba(18,41,50,0.12);
+    display: grid;
+    align-content: start;
+    max-height: var(--card-max-h);
+    overflow: hidden;
+  }
+  
+  /* Expanded state removes height cap */
+  .cardExpanded{
+    max-height: none;
+    overflow: visible;
+  }
+  
+  /* Subtle fade at bottom when truncated */
+  .fade{
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 56px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), #fff 60%);
+    pointer-events: none;
+  }
+  .fadeHidden{ display: none; }
+  
+  /* Header */
+  .header{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .avatar{
+    width: 36px; height: 36px; border-radius: 999px;
+    background: #e9eef2; color: #122932;
+    display: grid; place-items: center; font-weight: 700;
+  }
+  .name{ font-weight: 700; color: #122932; font-size: clamp(14px, 1.8vw, 16px); }
+  
+  /* Quote text */
+  .quote{ margin: 0; color: #122932; }
+  .quote p{ margin: 0; line-height: 1.6; font-size: clamp(14px, 1.9vw, 16px); }
+  
+  /* More/Less button */
+  .moreBtn{
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid #e1e6ea;
+    background: #f7fafc;
+    color: #122932;
+    font-size: 13px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  
+  /* Pause animation on hover or focus */
+  .viewport:hover .track,
+  .viewport:focus-within .track,
+  .paused .track{
+    animation-play-state: paused;
+  }
+  
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    .track{ animation: none; transform: none; }
+  }
+  
+  @media (max-width: 380px){
+    .avatar{ width: 32px; height: 32px; }
+  }
+  
