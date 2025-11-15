@@ -9,6 +9,7 @@ import Testimonials from "@/components/Home/Testimonials/Testimonials";
 import ContactForm from "@/components/Home/ContactForm/ContactForm";
 export default function Home() {
   return (
+    
     <div className={styles.page}>
       <HeroLanding/>
       <CourseOfferings/>
