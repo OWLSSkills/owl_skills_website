@@ -81,7 +81,7 @@
 @media (max-width: 500px) {
     .hero_landing_buttons_container {
       flex-wrap: wrap;
-      transform: translate(0, -8svh);
+      transform: translate(0, -10svh);
     }
 }
 
