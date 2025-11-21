@@ -101,6 +101,14 @@ html, body {
   font-family: sans-serif;
 }
 
+@media (max-width: 480px) {
+  .call_to_action_button {
+    padding: 0.6rem 1.2rem;   /* Reduce padding */
+    font-size: 0.9rem;        /* Slightly smaller text */
+    width: auto;              /* Let it naturally size */
+  }
+}
+
 
 .mt-2{
   margin-top: 2svh;
@@ -110,6 +118,9 @@ html, body {
 }
 .mt-up-20{
   margin-top: -20svh;
+}
+.mt-up-10{
+  transform: translate(0, -10svh);
 }
 
 

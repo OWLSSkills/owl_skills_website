@@ -49,7 +49,7 @@ export default function HeroLanding() {
                         />
                     </div>
                 </div>
-                <div className={styles.hero_landing_buttons_container}>
+                <div className={`${styles.hero_landing_buttons_container}`}>
                     <button onClick={navigateToCourses} className={`background_color_light_purple font_color_white call_to_action_button`}>
                         BOOK YOUR COURSE
                     </button>

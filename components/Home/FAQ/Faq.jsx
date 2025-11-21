@@ -138,7 +138,7 @@ export default function FaqBox() {
             q: "Can my male-identifying relative or friend come?",
             a: (
                 <p>
-                    Short answer: No.  Most of our courses are designed for women and non-binary folks comfortable in
+                    Short answer: No.  Most of our courses are designed for women and nonbinary folks comfortable in
                     women-only spaces. Occasionally we offer “All-Inclusive” classes open to all
                     demographics—these are labeled <strong>All-Inclusive</strong> on the calendar
                     and booking screen.
