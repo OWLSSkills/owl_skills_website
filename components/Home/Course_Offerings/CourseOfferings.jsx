@@ -54,7 +54,7 @@ export default function CourseOfferings(){
                 </figure>  
             </div>
             <div className={styles.second_sub_section}>
-                <img src='/images/Cutom_private_courses.png' alt='Course Offerings Banner' className={`${styles.course_offerings_image_bottom} mt-up-20 `}/>
+                <img src='/images/Cutom_private_courses.png' alt='Course Offerings Banner' className={`${styles.course_offerings_image_bottom}  `}/>
             </div>
         </div>
     )

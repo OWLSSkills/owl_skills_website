@@ -57,7 +57,8 @@
   height: auto;                  /* or 100% + object-fit: cover if you want a fixed ratio */
   display: block;
   object-fit: contain;           /* keeps full image visible */
-  transform: none;               /* remove the zoom that caused overflow */
+  margin-top: -5svh;
+
 }
 
 /* Second section */
