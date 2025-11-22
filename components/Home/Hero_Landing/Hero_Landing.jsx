@@ -62,7 +62,7 @@ export default function HeroLanding() {
                 <img src='/images/MeetJessie_picture.png' alt='Meet Jessie Image' className={styles.meet_instructor_image}/>
             </div>
             <div className={`${styles.as_seen_animation_banner}`}>
-                <h2 className='justify_self_center light_green_for_text intervariable '>As Seen, Read and Heard On</h2>
+                <h2 className='justify_self_center light_green_for_text intervariable '>As seen, read, and heard on:</h2>
 
                 <div className={styles.animation_banner_wrapper}>
                     <div className={styles.animation_banner_track}>
