@@ -68,19 +68,19 @@ export default function Header() {
           </Link>
 
           {/* MOBILE-ONLY CTA INSIDE MENU */}
-          <Link
-            href="/#courses"
+          <a
+            href="https://bookings.owlsskills.com/en"
             className={`background_color_light_purple font_color_white call_to_action_button ${styles.mobileCta}`}
             onClick={closeMenu}
           >
             BOOK A COURSE
-          </Link>
+          </a>
         </nav>
 
         {/* DESKTOP CTA */}
         <div className={styles.ctaWrap}>
           <Link
-            href="/#courses"
+            href="https://bookings.owlsskills.com/en"
             className={`background_color_light_purple font_color_white call_to_action_button ${styles.scaleUpCenter}`}
           >
             BOOK A COURSE
