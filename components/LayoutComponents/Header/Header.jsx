@@ -45,13 +45,30 @@ export default function Header() {
           >
             Mission
           </Link>
-          <Link
-            href="/about_courses"
-            className={`${styles.navLink} intervariable`}
-            onClick={closeMenu}
-          >
-            About Our Courses
-          </Link>
+          <div className={styles.navDropdown}>
+  <button
+    className={`${styles.navLink} intervariable ${styles.dropdownToggle}`}
+    onClick={closeMenu}
+  >
+    About Our Courses
+    <span className={styles.dropdownArrow}>▼</span>
+  </button>
+
+  <div className={styles.dropdownMenu}>
+    <Link href="/about_courses" className={styles.dropdownItem} onClick={closeMenu}>
+      About Our Courses
+    </Link>
+    <Link href="/courses/one-day" className={styles.dropdownItem} onClick={closeMenu}>
+      One Day Course
+    </Link>
+    <Link href="/courses/weekend_course" className={styles.dropdownItem} onClick={closeMenu}>
+      Weekend Course
+    </Link>
+    <Link href="/courses/limited-edition" className={styles.dropdownItem} onClick={closeMenu}>
+      Limited Edition Retreat
+    </Link>
+  </div>
+</div>
           <Link
             href="/#faq"
             className={`${styles.navLink} intervariable`}

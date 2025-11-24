@@ -172,3 +172,58 @@
     margin-top: auto; /* push to bottom of panel */
   }
 }
+
+
+/* Container */
+.navDropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Make button look like your existing navLink */
+.dropdownToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Small arrow */
+.dropdownArrow {
+  font-size: 0.6rem;
+  margin-left: 4px;
+}
+
+/* Dropdown menu */
+.dropdownMenu {
+  display: none;
+  position: absolute;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem 0;
+  z-index: 10;
+  min-width: 160px;
+}
+
+/* Each item */
+.dropdownItem {
+  display: block;
+  padding: 0.4rem 1rem;
+  text-decoration: none;
+  color: inherit;
+  white-space: nowrap;
+  color: #276C4C;
+
+}
+
+.dropdownItem:hover {
+  background-color: #f5f5f5;
+}
+
+/* Show menu when hovering (simple CSS-driven dropdown) */
+.navDropdown:hover .dropdownMenu {
+  display: block;
+}
