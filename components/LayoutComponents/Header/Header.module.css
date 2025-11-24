@@ -187,14 +187,23 @@
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
-  padding: 0; /* keep same spacing as .navLink coming from parent */
+  text-decoration: none;
+  color: #276C4C;
+  text-transform: uppercase;
+  font-weight: 700 !important;
+  letter-spacing: .03em;
+  font-size: clamp(14px, 1.6vw, 28px);
+  white-space: nowrap;
+  
+
 }
 
 /* Small arrow */
 .dropdownArrow {
   font-size: 0.6rem;
   margin-left: 4px;
+  color: #276C4C;
+
 }
 
 /* Dropdown menu: hidden by default, stacked under link */
@@ -221,6 +230,10 @@
   text-decoration: none;
   color: #276C4C;
   white-space: nowrap;
+  font-weight: 700;
+  letter-spacing: .03em;
+  font-size: clamp(12px, 1.4vw, 22px);
+  cursor: pointer;
 }
 
 .dropdownItem:hover {
