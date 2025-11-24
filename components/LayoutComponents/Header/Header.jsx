@@ -10,7 +10,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   // Hide header on home page like before
-  if (pathname === '/') return null;
+  // if (pathname === '/') return null;
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
