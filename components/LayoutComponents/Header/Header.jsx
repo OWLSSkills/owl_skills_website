@@ -8,13 +8,16 @@ import styles from './Header.module.css';
 export default function Header() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-
-  // Hide header on home page like before
-  // if (pathname === '/') return null;
+  const [isCoursesOpen, setIsCoursesOpen] = useState(false);
+  
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
-  const closeMenu = () => setIsOpen(false);
-
+  const closeMenu = () => {
+    setIsOpen(false);
+    setIsCoursesOpen(false);
+  };
+  
+  const toggleCourses = () => setIsCoursesOpen((prev) => !prev);
   return (
     <header className={styles.header}>
       <div className={styles.bar}>
@@ -33,7 +36,7 @@ export default function Header() {
           />
         </Link>
 
-        {/* DESKTOP NAV */}
+        {/* NAV (desktop + mobile) */}
         <nav
           className={`${styles.nav} ${isOpen ? styles.navMobileOpen : ''}`}
           aria-label="Primary"
@@ -45,16 +48,22 @@ export default function Header() {
           >
             Mission
           </Link>
+
           <div className={styles.navDropdown}>
   <button
+    type="button"
     className={`${styles.navLink} intervariable ${styles.dropdownToggle}`}
-    onClick={closeMenu}
+    onClick={toggleCourses}    // ⬅️ use toggleCourses, not closeMenu
   >
     About Our Courses
     <span className={styles.dropdownArrow}>▼</span>
   </button>
 
-  <div className={styles.dropdownMenu}>
+  <div
+    className={`${styles.dropdownMenu} ${
+      isCoursesOpen ? styles.dropdownMenuOpen : ''
+    }`}
+  >
     <Link href="/about_courses" className={styles.dropdownItem} onClick={closeMenu}>
       About Our Courses
     </Link>
@@ -69,6 +78,8 @@ export default function Header() {
     </Link>
   </div>
 </div>
+
+
           <Link
             href="/#faq"
             className={`${styles.navLink} intervariable`}
