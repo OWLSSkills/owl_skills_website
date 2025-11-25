@@ -51,7 +51,7 @@ export default function FirstMiniSection() {
         <div className={styles.copy}>
           <p className={`${styles.leadInline} ${styles.paragraph} intervariable`}>
             <strong>
-              To educate and empower women and non-binary folks comfortable in
+              To educate and empower women and nonbinary folks comfortable in
               women’s spaces, in the skills needed to survive emergencies in any
               environment.
             </strong>

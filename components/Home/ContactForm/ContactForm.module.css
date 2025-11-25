@@ -1,5 +1,5 @@
 /* ContactForm.module.css */
-.title  { text-align:center; margin:0 0 2rem; font-weight:800; letter-spacing:.5px; }
+.title  { text-align:center;     margin: 0 0 clamp(24px, 3vw, 36px); font-weight:800; letter-spacing:.5px; }
 .contact { margin-top: 5svh; }
 
 .form   { width:100svw; display:grid; gap:1.5rem; justify-content:center; justify-self:center; }

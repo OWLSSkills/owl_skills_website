@@ -39,7 +39,7 @@ export default function WeekendCourseDetails() {
           </p>
           <p className='intervariable'>
             At O.W.L.S. Skills we endeavor to create a safe and supportive learning space
-            specifically for women and non-binary folks comfortable in women-only spaces.
+            specifically for women and nonbinary folks comfortable in women-only spaces.
             Occasionally we offer all-inclusive general-admission classes where all genders
             are welcome. Our classes are intended to help people feel more confident and
             empowered while connecting tangibly with the land through skills and knowledge.

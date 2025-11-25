@@ -29,14 +29,14 @@ export default function SecondSection() {
                 <p className={`${styles.paragraph} intervariable`}>
                     Most outdoor schools are run by, and cater to, men.
                     Many also waste time teaching people how to live in the wilderness, versus how to get home safely if things take a bad turn.
-                    This often leaves folks with the sense that learning survival skills is very hard and only for those that
-                    are physically in their prime and preferably male (neither of which is true!).
+                    This often leaves folks with the sense that learning survival skills is very hard, only for those that
+                    are physically in their prime, and preferably male (none of which is true!).
                 </p>
                 <br />
                 <p className={`${styles.paragraph} intervariable`}>
                     Beautiful and challenging wild places have value for everyone, and creating a supportive, welcoming environment is our goal.
                     So our classes cater to women and other marginalized demographics such as BIPOC and the LGBTQ+ communities.
-                    For other demographics please visit JessieKrebs.com to look into our custom courses.
+                    For other demographics please look at our custom course page.
                 </p>
             </div>
             <div className={styles.journalWrap}>
