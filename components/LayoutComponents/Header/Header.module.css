@@ -27,6 +27,7 @@
   height: clamp(60px, 6vw, 122px);
   width:auto;
   display:block;
+  align-self: center;
 }
 
 /* center nav */
@@ -73,7 +74,6 @@
 /* SCALE EFFECT FOR BUTTON IN HEADER */
 .scaleUpCenter{
   transform-origin: center;
-  margin-top: 8%;
 }
 
 @media (max-width: 1200px) {
