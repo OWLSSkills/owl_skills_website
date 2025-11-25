@@ -53,7 +53,7 @@
 
 /* Bottom banner should also not overflow */
 .course_offerings_image_bottom{
-  width: 100%;
+  width: 60%;
   height: auto;                  /* or 100% + object-fit: cover if you want a fixed ratio */
   display: block;
   object-fit: contain;           /* keeps full image visible */
