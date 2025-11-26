@@ -1,5 +1,5 @@
 .hero_landing {
-    height: 100svh;
+    /* height: 100svh; */
     background: linear-gradient(180deg, #fff, #fff); 
     background-color: red;
     overflow: hidden;
@@ -99,14 +99,22 @@
 }
 /* Container section */
 .as_seen_animation_banner {
-    background-color: #276C4C;
-    width: 100%;
-    height: 22svh;
-    position: relative;
-    padding: 2%;
-  }
+  background-color: #276C4C;
+  width: 100%;
+  padding: 1.25rem 2vw 1.75rem !important;  /* controlled spacing instead */
+  position: relative;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.75rem;
+}
+
   
   /* Main wrapper */
+.as_seen_animation_banner h2 {
+  text-align: center;          /* optional, but usually looks nice here */
+}
   .animation_banner_wrapper {
     overflow: hidden;
     width: 100%;
