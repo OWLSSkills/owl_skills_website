@@ -23,7 +23,7 @@
   }
 
   .mission_image{
-    width: 100%;
+    width: 70%;
     display: block;
     margin: 0 auto;   /* centers horizontally */
   }
@@ -37,5 +37,6 @@
   .paragraph{
     margin-left: 14svw;
     margin-right: 2svw;
-    font-size:2svw;
+    font-size: clamp(18px, 2vw, 22px);
+    font-weight: bolder;
   }
