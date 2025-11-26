@@ -11,20 +11,20 @@
     padding-inline: clamp(12px, 4vw, 32px);
   }
   
-  /* tape SVG */
-  .tape{
-    width: min(100%, 620px);                              /* keep it reasonable */
+  .tape {
+    width: min(100%, 480px);
     height: auto;
     display: block;
   }
   
-  .lead{
-    margin-top: -8svh;
-    max-width: 62ch;
-    font-size: clamp(18px, 2vw, 22px);
-    line-height: 1.45;
-    color: #122932;
+  .tapeText {
+    fill: rgb(90, 122, 94);
+    font-weight: 700;
+    font-size: clamp(100px, 7vw, 115px); /* responsive sizing */
   }
+  
+
+
   
   /* --- two-column content --- */
   .content{

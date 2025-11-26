@@ -3,38 +3,39 @@ import styles from './FirstMiniSection.module.css';
 export default function FirstMiniSection() {
   return (
     <section className={styles.section}>
-      <div className={styles.wrap}>
-        {/* Tape / title */}
-        <svg
-          className={styles.tape}
-          viewBox="0 0 1440 560"
-          aria-labelledby="mission-title"
-          role="img"
-        >
-          <title id="mission-title">Our Mission</title>
-          <image
-            href="/images/mission/Tape.png"
-            x="-165"
-            y="-40svh"
-            width="3600"
-            height="1200"
-            preserveAspectRatio="xMinYMin meet"
-          />
-          <text
-            x="103"
-            y="230"
-            fontSize="130"
-            fontWeight="130"
-            fill="RGB(90,122,94)"
-            transform="rotate(-8 220 330)"
-            textLength="830"
-            lengthAdjust="spacing"
-            className="gloria"
-          >
-            OUR MISSION
-          </text>
-        </svg>
-      </div>
+  <div className={styles.wrap}>
+  <svg
+  className={styles.tape}
+  viewBox="0 0 1440 560"
+  aria-labelledby="mission-title"
+  role="img"
+>
+  <title id="mission-title">Our Mission</title>
+
+  {/* Tape Image */}
+  <image
+    href="/images/mission/Tape.png"
+    x="0"
+    y="0"
+    width="1440"
+    height="560"
+    preserveAspectRatio="xMidYMid slice"
+  />
+
+  {/* Centered Text */}
+  <text
+    x="50%"
+    y="50%"
+    dominantBaseline="middle"
+    textAnchor="middle"
+    className={`${styles.tapeText} gloria`}
+    transform="rotate(-6 720 280)"   
+  >
+    OUR MISSION
+  </text>
+</svg>
+
+  </div>
 
       {/* Two-column content */}
       <div className={`${styles.wrap} ${styles.content}`}>

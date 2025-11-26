@@ -101,7 +101,6 @@
 .as_seen_animation_banner {
   background-color: #276C4C;
   width: 100%;
-  padding: 1.25rem 2vw 1.75rem !important;  /* controlled spacing instead */
   position: relative;
   padding: 2%;
   display: flex;
