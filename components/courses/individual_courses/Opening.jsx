@@ -14,7 +14,7 @@ export default function OneDayCourses() {
                     <div className={styles.photos}>
                         <figure className={`${styles.polaroid} ${styles.p1}`}>
                             <img
-                                src="/courses/One Day Course.png"
+                                src="public/courses/One Day Course nov7.png"
                                 alt="Students practicing skills outdoors"
                                 className={styles.photo}
                             />
@@ -34,7 +34,7 @@ export default function OneDayCourses() {
                         </p>
                         <a
                             href="https://bookings.owlsskills.com/en/category/one-day-courses"
-                            className={`background_color_light_green font_color_white call_to_action_button mt-5  ${styles.scaleUpSmall}` }
+                            className={`background_color_light_green font_color_white call_to_action_button mt-5 ` }
                         >
                             BOOK YOUR COURSE
                         </a>

@@ -23,14 +23,19 @@ const imgStyle = {
   main: { display: 'block', margin: '16px auto' }
 }
 
-/** Preserve multiple blank lines in Markdown preview */
+/** Preserve multiple blank lines in Markdown preview without breaking headings */
 function preserveExtraBlankLines(src = '') {
-  // Turn runs of 2+ newlines into: "\n" + ("\n ") repeated (NBSP)
   return src.replace(/\n{2,}/g, (m) => {
-    const extra = m.length - 1
-    return '\n' + Array.from({ length: extra }, () => '\n\u00A0').join('')
+    // Keep the first two newlines as-is (Markdown-friendly blank paragraph)
+    if (m.length === 2) return '\n\n'
+
+    // For 3+ newlines, keep two real blank lines,
+    // then add extra "almost blank" lines that only contain spaces.
+    const extra = m.length - 2
+    return '\n\n' + Array.from({ length: extra }, () => '\n ').join('')
   })
 }
+
 
 /** Turndown (HTML → Markdown) setup */
 const td = new TurndownService({

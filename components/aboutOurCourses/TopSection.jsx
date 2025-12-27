@@ -4,14 +4,14 @@ import styles from './TopSection.module.css'
 export default function TopSection() {
     return (
         <>
-                    <div className={`${styles.topSection}`}>
+            <div className={`${styles.topSection}`}>
                 <div className={styles.headerAndPhotos}>
 
                     <div className={styles.header}>
                         <div className={styles.tape}>
                             <h2 className={`${styles.title} gloria`}>About Our Courses</h2>
                         </div>
-                    </div>        
+                    </div>
                     <div className={`${styles.container}`}>
 
                         <img src='/aboutOurCourses/Our_course_top_pictures.png' className={`${styles.introPhotos}`} />

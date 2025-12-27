@@ -9,15 +9,12 @@ export default function WeekendCoursePage({
         <main >
  <section className={styles.limited}>
   {/* tape title (PNG contains the text) */}
-  <div className={styles.title}>
-    <Image
-      src="/images/limited-edition/tape.png"
-      alt="Limited Edition Retreats"
-      width={1100}
-      height={330}
-      priority
-    />
-  </div>
+
+                      <div className={styles.header}>
+                          <div className={styles.tape}>
+                              <h2 className={`${styles.title} gloria`}>One Day Courses</h2>
+                          </div>
+                      </div>
 
   {/* content row: photo (left) | copy (right) */}
   <div className={styles.row}>

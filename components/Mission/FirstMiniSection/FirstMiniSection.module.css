@@ -60,7 +60,7 @@
     line-height: 1.75;                                    /* ↑ taller lines to match image height */
     hyphens: auto;
   }
-  .copy p{ margin: 0; }
+  .copy p{ margin: 0; transform: translate(-7svw,0);}
   .copy p + p{ margin-top: clamp(10px, 1.2vw, 18px); }    /* modest paragraph spacing */
   
   /* mobile: stack and keep things tight */
@@ -78,7 +78,6 @@
       height: auto;                 /* was a fixed clamp() height */
       display: grid;
       grid-template-columns: 1fr;
-      gap: 12px;    
       scale: 1;                /* spacing between shots */
     }
   

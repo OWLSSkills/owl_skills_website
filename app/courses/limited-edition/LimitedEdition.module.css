@@ -33,20 +33,53 @@
   }
   
   /* Title, row, photo, copy, cta… keep as-is below */
-  
+  /* SAVE */
   
   /* Title (tape PNG) */
-  .title {
-    display: grid;
-    place-items: start;
-    margin-bottom: clamp(8px, 1.2vw, 16px);
-    margin-left: -6vw;                 /* gentle left drag like your style */
+  .header {
+    margin-left: 4svw;
+    align-self: start;
+
   }
-  .title :where(img) {
-    width: min(820px, 92%);
-    height: auto;
-    display: block;
-  }
+
+  
+/* Title wrapper */
+.tape {
+
+  /* knobs you can tweak */
+  --tape-h: clamp(180px, 24vh, 600px);   /* tape HEIGHT */
+  --x-bleed: clamp(32px, 6vw, 120px);   /* left/right overhang */
+
+  position: relative;
+  display: inline-block;                /* grows with text */
+  line-height: 1;                       /* tight vertical fit */
+}
+
+/* the tape image behind the text */
+.tape::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(100% + var(--x-bleed));   /* make it WIDER than the text */
+  height: var(--tape-h);                /* make it TALLER */
+  transform: translate(-50%, -50%);
+  background: url("/images/Limited-edition/Limited_title.png") center / 100% 100% no-repeat;
+  z-index: 0;
+}
+
+/* the actual title text */
+.tape .title {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding: 0 clamp(24px, 3vw, 35px);    /* breathing room inside the tape */
+  font-size: clamp(28px, 5vw, 45px);
+  font-weight: 800;
+  color: rgb(50, 87, 66);
+}
+
+  /*SAVE*/
   
   /* Photo | Copy layout (flipped from weekend page) */
   .row {
