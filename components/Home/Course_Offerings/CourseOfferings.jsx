@@ -53,12 +53,27 @@ export default function CourseOfferings(){
                     </a>
                 </figure>  
             </div>
+
             <div className={styles.second_sub_section}>
+            <figure className={styles.boardWrapBottom} style={{
+                    // tweak these three numbers to line it up perfectly
+                    // (percentages are relative to the image's width/height)
+                    '--btn-left': '10%',   // x from the left edge
+                    '--btn-top':  '40.0%',  // y from the top edge
+                    '--btn-width':'28%',    // width of the button area
+                    }}>
                 <img src='/images/Cutom_private_courses.png' alt='Course Offerings Banner' className={`${styles.course_offerings_image_bottom}  `}/>
+                <a href="/courses/limited-edition"
+                        className={`background_color_light_green font_color_white call_to_action_button shift-left-15 ${styles.overlayBtn}`}
+                        aria-label="Book your one-day survival course">
+                        Learn More
+                    </a>
+                </figure>  
             </div>
         </div>
     )
 }
+// https://bookings.owlsskills.com/en/category/custom-courses
 
 
 

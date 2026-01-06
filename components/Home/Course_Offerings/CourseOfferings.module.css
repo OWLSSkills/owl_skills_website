@@ -1,6 +1,5 @@
 
 .section{
-    min-height: 100svh;                           
     display: grid;
     grid-template-rows: 1fr auto;                  
     row-gap: clamp(12px, 2vw, 32px);
@@ -43,6 +42,13 @@
   overflow: hidden;              /* hides any cropping from object-fit: cover */
 }
 
+.boardWrapBottom{
+  position: relative;
+  width: 100%;
+  max-width: 60%;              /* adjust to taste */
+}
+
+
 /* Images: never exceed their cell */
 .course_offerings_image{
   width: 100%;
@@ -53,11 +59,9 @@
 
 /* Bottom banner should also not overflow */
 .course_offerings_image_bottom{
-  width: 60%;
-  height: auto;                  /* or 100% + object-fit: cover if you want a fixed ratio */
+  width: 100%;
   display: block;
   object-fit: contain;           /* keeps full image visible */
-  margin-top: -5svh;
 
 }
 
@@ -70,7 +74,6 @@
 }
 .second_sub_section img{
   max-width: 100%;
-  height: auto;
   object-fit: contain;
 }
 
