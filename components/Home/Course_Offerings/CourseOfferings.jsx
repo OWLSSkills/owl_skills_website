@@ -63,11 +63,11 @@ export default function CourseOfferings(){
                     '--btn-width':'28%',    // width of the button area
                     }}>
                 <img src='/images/Cutom_private_courses.png' alt='Course Offerings Banner' className={`${styles.course_offerings_image_bottom}  `}/>
-                <a href="/courses/limited-edition"
+                {/* <a href="/courses/limited-edition"
                         className={`background_color_light_green font_color_white call_to_action_button shift-left-15 ${styles.overlayBtn}`}
                         aria-label="Book your one-day survival course">
                         Learn More
-                    </a>
+                    </a> */}
                 </figure>  
             </div>
         </div>
