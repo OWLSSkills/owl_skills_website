@@ -63,7 +63,7 @@
   width: calc(100% + var(--x-bleed));   /* make it WIDER than the text */
   height: var(--tape-h);                /* make it TALLER */
   transform: translate(-50%, -50%);
-  background: url("/images/Limited-edition/Limited_title2.png") center / 100% 100% no-repeat;
+  background: url("/images/limited-edition/Limited_title2.png") center / 100% 100% no-repeat;
   z-index: 0;
 }
 
