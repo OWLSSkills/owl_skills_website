@@ -14,7 +14,7 @@ export default function OneDayCourses() {
                     <div className={styles.photos}>
                         <figure className={`${styles.polaroid} ${styles.p1}`}>
                             <img
-                                src="public/courses/One Day Course nov7.png"
+                                src="public/courses/One_Day_Course_nov7.png"
                                 alt="Students practicing skills outdoors"
                                 className={styles.photo}
                             />
