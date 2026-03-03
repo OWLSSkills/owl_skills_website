@@ -52,7 +52,6 @@ export default function Testimonials() {
     };
   }, []);
 
-  // Detect overflow on the CARD (figure), not the <p>
   useEffect(() => {
     const computeOverflow = () => {
       const flags = baseSet.map((_, i) => {
@@ -138,14 +137,16 @@ export default function Testimonials() {
                     aria-expanded={isOpen}
                   >
                     <figcaption className={styles.header}>
+                      
                       <div className={styles.avatar} aria-hidden="true">
                         {t.initial ?? t.name[0]}
                       </div>
                       <span className={styles.name}>{t.name}</span>
                     </figcaption>
 
-                    <blockquote className={styles.quote}>
+                    <blockquote className={`${styles.quote} intervariable`}>
                       <p>“{t.text}”</p>
+                      
                     </blockquote>
 
                     {/* Fade only when truncated */}
