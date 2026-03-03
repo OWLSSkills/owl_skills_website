@@ -74,7 +74,7 @@ export default function Header() {
       Weekend Course
     </Link>
     <Link href="/courses/limited-edition" className={styles.dropdownItem} onClick={closeMenu}>
-      Limited Edition Retreat
+      Limited Edition Retreats
     </Link>
   </div>
 </div>

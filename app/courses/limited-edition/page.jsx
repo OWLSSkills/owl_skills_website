@@ -12,7 +12,7 @@ export default function WeekendCoursePage({
 
                       <div className={styles.header}>
                           <div className={styles.tape}>
-                              <h2 className={`${styles.title} gloria`}>Limited Edition Retreat</h2>
+                              <h2 className={`${styles.title} gloria`}>Limited Edition Retreats</h2>
                           </div>
                       </div>
 
