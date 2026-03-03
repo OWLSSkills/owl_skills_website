@@ -21,7 +21,6 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.bar}>
-        {/* LOGO */}
         <Link
           href="/"
           className={styles.brand}
@@ -36,7 +35,6 @@ export default function Header() {
           />
         </Link>
 
-        {/* NAV (desktop + mobile) */}
         <nav
           className={`${styles.nav} ${isOpen ? styles.navMobileOpen : ''}`}
           aria-label="Primary"
@@ -64,16 +62,16 @@ export default function Header() {
       isCoursesOpen ? styles.dropdownMenuOpen : ''
     }`}
   >
-    <Link href="/about_courses" className={styles.dropdownItem} onClick={closeMenu}>
+    <Link href="/about_courses" className={`${styles.dropdownItem} intervariable`} onClick={closeMenu}>
       About Our Courses
     </Link>
-    <Link href="/courses/one-day" className={styles.dropdownItem} onClick={closeMenu}>
+    <Link href="/courses/one-day" className={`${styles.dropdownItem} intervariable`} onClick={closeMenu}>
       One Day Course
     </Link>
-    <Link href="/courses/weekend_course" className={styles.dropdownItem} onClick={closeMenu}>
+    <Link href="/courses/weekend_course" className={`${styles.dropdownItem} intervariable`} onClick={closeMenu}>
       Weekend Course
     </Link>
-    <Link href="/courses/limited-edition" className={styles.dropdownItem} onClick={closeMenu}>
+    <Link href="/courses/limited-edition" className={`${styles.dropdownItem} intervariable`} onClick={closeMenu}>
       Limited Edition Retreats
     </Link>
   </div>
@@ -95,7 +93,6 @@ export default function Header() {
             Newsletter
           </Link>
 
-          {/* MOBILE-ONLY CTA INSIDE MENU */}
           <a
             href="https://bookings.owlsskills.com/en"
             className={`background_color_light_purple font_color_white call_to_action_button ${styles.mobileCta}`}
@@ -105,7 +102,6 @@ export default function Header() {
           </a>
         </nav>
 
-        {/* DESKTOP CTA */}
         <div className={styles.ctaWrap}>
           <Link
             href="https://bookings.owlsskills.com/en"
@@ -115,7 +111,6 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* HAMBURGER (MOBILE ONLY) */}
         <button
           type="button"
           className={styles.menuToggle}
