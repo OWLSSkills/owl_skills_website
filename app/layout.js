@@ -14,21 +14,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "OWLS Skills",
-  description: "Outdoorsy Women Learning Survival Skills",
-  icons: {
-    icon: "/favicon.png",           
-    shortcut: "/favicon.png",       
-    apple: "/favicon.png",          
+  title: {
+    default: "Women’s Survival School & Wilderness Training | OWLS Skills",
+    template: "%s | OWLS Skills",
   },
-
+  description:
+    "Women-led survival and wilderness training courses across the United States. Learn fire crafting, emergency shelter, water procurement, navigation, and more.",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-=        <link
+        <link
           href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap"
           rel="stylesheet"
         />
