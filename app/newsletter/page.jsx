@@ -87,7 +87,7 @@ export default async function NewsletterPage() {
           if (b.type === 'text') {
             // Render stored markdown (NOT b.html), with spacing preserved
             return (
-              <div key={i} className={styles.textBlock}>
+              <div key={i} className={`${styles.textBlock} intervariable`}>
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm, remarkBreaks]}
                   components={{
