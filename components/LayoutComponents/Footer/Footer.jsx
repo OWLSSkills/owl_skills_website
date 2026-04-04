@@ -13,7 +13,7 @@ export default function Footer() {
         <h3 className={`alfarn ${styles.contact}`}>CONTACT JESSIE!</h3>
         <h3 className={`intervariable ${styles.contact}`}>owlsskills@gmail.com</h3>
         <h3 className={`intervariable ${styles.contact}`}>(720) 647-5892</h3>
-        <br/>
+        <br />
       </div>
 
       <div className={styles.footerStack}>
@@ -26,12 +26,12 @@ export default function Footer() {
         <p className={`alfarn`}>All rights reserved.</p>
       </div>
       <div className={styles.affiliateLogos}>
-        <img className={`${styles.logoFooter}`} src='/images/OWLS_color_without_description.png' alt='owl skills logo'/>
-        <img className={`${styles.logoFooter}`} src='/images/Custom_Survival_Course.png' alt='owl skills logo'/>
+        <img className={`${styles.logoFooter}`} src='/images/OWLS_color_without_description.png' alt='owl skills logo' />
+        <div className={styles.logoLockup}>
+          <h2 className={styles.alfarn_custom}>Custom Courses</h2>
+          <p className={styles.gloria_cursive}>by Jessie Krebs</p>
+        </div>
       </div>
-
-      {/* docked on the right + scaled */}
-
     </footer>
   );
 }
