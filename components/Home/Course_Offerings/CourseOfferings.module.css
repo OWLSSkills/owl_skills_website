@@ -59,10 +59,11 @@
 
 /* Bottom banner should also not overflow */
 .course_offerings_image_bottom{
-  width: 100%;
+  width: 100svw!important;
   display: block;
   object-fit: contain;           /* keeps full image visible */
-
+  justify-self: center;
+  align-self: center;
 }
 
 /* Second section */
@@ -72,10 +73,7 @@
   justify-content: center;
   overflow: hidden;              /* keep it tidy */
 }
-.second_sub_section img{
-  max-width: 100%;
-  object-fit: contain;
-}
+
 
   @media (max-width: 900px){
     .first_sub_section{ grid-template-columns: repeat(2, minmax(0,1fr)); }
@@ -112,6 +110,9 @@
       --btn-left: 10.5%;
       --btn-top:  66.5%;
       --btn-width: 55%;   /* make it larger on small screens if needed */
+    }
+    .overlayBtn{
+      scale: .9;
     }
   }
   
