@@ -1,3 +1,5 @@
+'use client'
+
 import styles from './Footer.module.css';
 import SocialIcons from '@/components/Home/Socials/Socials';
 
@@ -26,8 +28,8 @@ export default function Footer() {
         <p className={`alfarn`}>All rights reserved.</p>
       </div>
       <div className={styles.affiliateLogos}>
-        <img className={`${styles.logoFooter}`} src='/images/OWLS_color_without_description.png' alt='owl skills logo' />
-        <div className={styles.logoLockup}>
+        <img className={`${styles.logoFooter}`} onClick={() => window.open('https://owlsskills.com')}style={{cursor: "pointer"}} src='/images/OWLS_color_without_description.png' alt='owl skills logo' />
+        <div className={styles.logoLockup} onClick={() => window.open('https://jessiekrebs.com')} style={{cursor: "pointer"}}>
           <h2 className={styles.alfarn_custom}>Custom Courses</h2>
           <p className={styles.gloria_cursive}>by Jessie Krebs</p>
         </div>
