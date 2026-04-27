@@ -24,8 +24,8 @@
 
 /* Right-docked container, vertically centered */
 .socialsDock {
-  justify-self: start;
-  align-self: start;
+  justify-self: center;
+  align-self: center;
   z-index: 1;
   margin-top: -1svh;
 }
@@ -34,15 +34,10 @@
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: flex-start;
   gap: clamp(0.5rem, 1.2vw, 1rem);
   width: max-content;
 }
 
-.socialsDock a,
-.socialsDock button {
-  flex: 0 0 auto;
-}
 
 .socialsDock img,
 .socialsDock svg {
@@ -74,6 +69,7 @@
   height: auto;
   justify-self: end;
   align-self: center;
+  cursor: pointer;
 }
 
 .logoLockup {
@@ -83,6 +79,7 @@
   justify-self: start;
   min-width: 0;
   line-height: 1.1;
+  cursor: pointer;
 }
 
 .alfarn_custom {
@@ -108,9 +105,6 @@
 .text {
   margin-top: -1svh;
 }
-
-
-
 @media (max-width: 800px) {
   .footer {
     grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) minmax(0, 0.95fr);
