@@ -1,6 +1,6 @@
 .footer {
   margin-top: 4svh;
-  background: rgb(245,249,246);
+  background: rgb(245, 249, 246);
   width: 100%;
   position: relative;
   min-height: 100px;
@@ -11,6 +11,7 @@
   box-sizing: border-box;
   column-gap: clamp(1rem, 2vw, 2rem);
 }
+
 .footerStack {
   display: inline-block;
   text-align: center;
@@ -20,6 +21,7 @@
 .smallLogo {
   width: 50%;
   justify-self: start;
+  cursor: pointer;
 }
 
 /* Right-docked container, vertically centered */
@@ -30,7 +32,7 @@
   margin-top: -1svh;
 }
 
-.socialsDock > div {
+.socialsDock>div {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -45,6 +47,7 @@
   height: clamp(2.75rem, 4vw, 4.5rem);
   display: block;
 }
+
 .contact {
   justify-self: center;
   font-size: clamp(1rem, 2svw, 1.2rem);
@@ -63,6 +66,7 @@
   min-width: 0;
   box-sizing: border-box;
 }
+
 .logoFooter {
   width: 100%;
   max-width: 8.5rem;
@@ -105,6 +109,7 @@
 .text {
   margin-top: -1svh;
 }
+
 @media (max-width: 800px) {
   .footer {
     grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) minmax(0, 0.95fr);
@@ -114,7 +119,7 @@
     padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
   }
 
-  .footer > div,
+  .footer>div,
   .footerStack,
   .affiliateLogos {
     min-width: 0;
@@ -128,7 +133,7 @@
     scale: 1;
   }
 
-  .socialsDock > div {
+  .socialsDock>div {
     justify-content: center;
     gap: 0.5rem;
     width: 100%;
@@ -190,5 +195,34 @@
     font-size: clamp(0.38rem, 1.8vw, 0.6rem);
     align-self: center;
     text-align: center;
+  }
+}
+
+.otherOpportunitiesLink {
+  position: absolute;
+  right: clamp(1rem, 3vw, 2.5rem);
+  bottom: 0.75rem;
+
+  font-family: var(--font-family-body, Arial, sans-serif);
+  font-size: clamp(0.85rem, 1vw, 1rem);
+  font-weight: 800;
+  color: var(--green-600, #276c4c);
+  text-decoration: none;
+  line-height: 1.1;
+}
+
+.otherOpportunitiesLink:hover {
+  color: var(--ink-900, #122932);
+  text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  .otherOpportunitiesLink {
+    position: static;
+    order: 4;
+    display: inline-block;
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: clamp(1rem, 4.5vw, 1.25rem);
   }
 }

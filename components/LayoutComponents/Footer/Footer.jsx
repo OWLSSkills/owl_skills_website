@@ -19,21 +19,28 @@ export default function Footer() {
       </div>
 
       <div className={styles.footerStack}>
-        <img
-          src="/images/Jessie_Krebs_Color.png"
-          alt="Jessie Krebs Logo"
-          className={styles.smallLogo}
-        />
+        <a href="https://website-linking-page.vercel.app/"
+          className={styles.heroLogoLink} aria-label="Go to homepage">
+
+          <img
+            src="/images/Jessie_Krebs_Color.png"
+            alt="Jessie Krebs Logo"
+            className={styles.smallLogo}
+          />
+        </a>
         <p className={`alfarn ${styles.text}`}>© {currentYear} Jessie Krebs.</p>
         <p className={`alfarn`}>All rights reserved.</p>
       </div>
       <div className={styles.affiliateLogos}>
-        <img className={`${styles.logoFooter}`} onClick={() => window.open('https://owlsskills.com')}style={{cursor: "pointer"}} src='/images/OWLS_color_without_description.png' alt='owl skills logo' />
-        <div className={styles.logoLockup} onClick={() => window.open('https://jessiekrebs.com')} style={{cursor: "pointer"}}>
+        <img className={`${styles.logoFooter}`} onClick={() => window.open('https://owlsskills.com')} style={{ cursor: "pointer" }} src='/images/OWLS_color_without_description.png' alt='owl skills logo' />
+        <div className={styles.logoLockup} onClick={() => window.open('https://jessiekrebs.com')} style={{ cursor: "pointer" }}>
           <h2 className={styles.alfarn_custom}>Custom Courses</h2>
           <p className={styles.gloria_cursive}>by Jessie Krebs</p>
         </div>
       </div>
+      <a href="/other_opportunities" className={styles.otherOpportunitiesLink}>
+        Other Learning Opportunities
+      </a>
     </footer>
   );
 }
