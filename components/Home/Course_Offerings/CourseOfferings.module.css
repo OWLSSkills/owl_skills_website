@@ -89,15 +89,26 @@
   /* Your existing image class is fine; just ensure it's block-level */
 
   /* Absolutely positioned, sized by percentages so it scales with the image */
-  .overlayBtn{
-    position: absolute;
-    left: var(--btn-left, 10%);
-    top:  var(--btn-top,  66%);
-    width: var(--btn-width, 28%);
-    z-index: 2;
-    /* optional: line the visual up more precisely */
-    transform-origin: left top;
-  }
+.overlayBtn {
+  position: absolute;
+  left: var(--btn-left, 10%);
+  top: var(--btn-top, 66%);
+  width: var(--btn-width, 28%);
+  z-index: 2;
+  transform-origin: left top;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  /* scales with the board, not the viewport */
+  font-size: clamp(8px, 3.2cqw, 15px);
+  line-height: 1.05;
+  padding: clamp(0.35rem, 2.2cqw, 0.8rem) clamp(0.45rem, 2.8cqw, 1rem);
+
+  white-space: normal;
+}
   
   /* If you want the clickable area to match a slightly rotated or offset design,
      nudge here (keep it subtle, like 1-2deg or a few px):
@@ -125,3 +136,44 @@
   text-decoration: none;
 }
 
+.boardWrap {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+
+  /* this makes cqw units work inside each board */
+  container-type: inline-size;
+}
+
+.boardText {
+  position: absolute;
+  left: var(--text-left, 11%);
+  right: var(--text-right, 16%);
+  top: var(--text-top, 5.5%);
+  z-index: 1;
+  color: #111;
+  pointer-events: none;
+}
+
+.boardText h3 {
+  margin: 0 0 clamp(0.45rem, 2.2cqw, 0.9rem);
+  font-family: var(--font-family-display, sans-serif);
+  font-size: clamp(14px, 7cqw, 28px);
+  line-height: 0.95;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.boardText p {
+  margin: 0 0 clamp(0.45rem, 2.4cqw, 0.95rem);
+  font-family: var(--font-family-body, Arial, sans-serif);
+  font-size: clamp(9px, 3.55cqw, 15px);
+  line-height: 1.16;
+  font-weight: 600;
+}
+
+.boardText p:last-child {
+  margin-bottom: 0;
+}
