@@ -177,3 +177,18 @@
 .boardText p:last-child {
   margin-bottom: 0;
 }
+
+@media (min-width: 1500px) {
+  .boardText h3 {
+    font-size: clamp(24px, 7.8cqw, 38px);
+  }
+
+  .boardText p {
+    font-size: clamp(12px, 4.2cqw, 18px);
+    line-height: 1.2;
+  }
+
+  .overlayBtn {
+    font-size: clamp(10px, 3.7cqw, 17px);
+  }
+}
