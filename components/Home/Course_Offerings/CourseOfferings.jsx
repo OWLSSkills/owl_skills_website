@@ -23,9 +23,9 @@ export default function CourseOfferings() {
                     />
 
                     <div className={styles.boardText}>
-                        <h3>One Day Survival Course</h3>
+                        <h3 className='alfarn'>One Day Survival Course</h3>
 
-                        <p>
+                        <p className='intervariable'>
                             We offer a variety of courses in our one-day format, from a core class
                             &#40;a great introduction to basic survival principles and how they
                             interrelate&#41; to a variety of courses that focus on a particular skill
@@ -33,7 +33,7 @@ export default function CourseOfferings() {
                             etc.
                         </p>
 
-                        <p>
+                        <p className='intervariable'>
                             No crawling in the mud or silent suffering; we aren’t a military boot camp!
                             Get the info without the attitude.
                         </p>
@@ -60,9 +60,9 @@ export default function CourseOfferings() {
                 >
                     <img src='/images/bubble_board/Bubble_2.png' alt='Weekend Survival Course' className={`${styles.course_offerings_image}`} />
                     <div className={styles.boardText}>
-                        <h3>Weekend Survival Course</h3>
+                        <h3 className='alfarn'>Weekend Survival Course</h3>
 
-                        <p>
+                        <p className='intervariable'>
                             This course is perfect for folks that have the time and the interest to get more hands-on training.
                             This weekend course is mentally intense with long days packed with information and skills practice
                             in a base-camp model. Activity level is usually mild depending on the course focus. Some weekend courses
@@ -90,9 +90,9 @@ export default function CourseOfferings() {
                     <img src='/images/bubble_board/Bubble_3.png' alt='Course Offerings Banner' className={styles.course_offerings_image} />
 
                     <div className={styles.boardText}>
-                        <h3>Limited Edition Retreat</h3>
+                        <h3 className='alfarn'>Limited Edition Retreat</h3>
 
-                        <p>
+                        <p className='intervariable'>
                             Come immerse yourself in a variety of multi-day courses. We have the time to really drop in, with each other,
                             our surroundings, and the skills and concepts. Each of these courses is unique and may be held anywhere around the country!
                         </p>
