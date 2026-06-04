@@ -44,7 +44,7 @@ export default function FaqBox() {
                         (one-day: 1 week out; weekend: 2 weeks; week-long: 4 weeks).
                     </p>
                     <p>
-                        Each course page has a generic packing list to help you prepare. Here is a sample list
+                       Here is a sample list
                         for a one-day course:
                     </p>
                     <h4>Required</h4>
