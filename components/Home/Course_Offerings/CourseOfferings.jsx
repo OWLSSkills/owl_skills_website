@@ -122,7 +122,7 @@ export default function CourseOfferings() {
                     />
 
                     <a
-                        href="https://jessiekrebs.com"
+                        href="https://trainwithjessie.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`background_color_light_green font_color_white call_to_action_button ${styles.overlayBtn}`}
