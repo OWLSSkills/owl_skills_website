@@ -19,7 +19,7 @@ export default function Footer() {
       </div>
 
       <div className={styles.footerStack}>
-        <a href="https://website-linking-page.vercel.app/"
+        <a href="https://jessiekrebs.com"
           className={styles.heroLogoLink} aria-label="Go to homepage">
 
           <img
