@@ -92,6 +92,13 @@ export default function Header() {
           >
             Newsletter
           </Link>
+          <a
+            href="https://website-linking-page.vercel.app/packing_list"
+            className={`${styles.navLink} intervariable`}
+            onClick={closeMenu}
+          >
+            Packing List
+          </a>
 
           <a
             href="https://bookings.owlsskills.com/en"
