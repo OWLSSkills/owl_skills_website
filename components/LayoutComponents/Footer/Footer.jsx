@@ -33,7 +33,7 @@ export default function Footer() {
       </div>
       <div className={styles.affiliateLogos}>
         <img className={`${styles.logoFooter}`} onClick={() => window.open('https://owlsskills.com')} style={{ cursor: "pointer" }} src='/images/OWLS_color_without_description.png' alt='owl skills logo' />
-        <div className={styles.logoLockup} onClick={() => window.open('https://jessiekrebs.com')} style={{ cursor: "pointer" }}>
+        <div className={styles.logoLockup} onClick={() => window.open('https://trainwithjessie.com')} style={{ cursor: "pointer" }}>
           <h2 className={styles.alfarn_custom}>Custom Courses</h2>
           <p className={styles.gloria_cursive}>by Jessie Krebs</p>
         </div>
